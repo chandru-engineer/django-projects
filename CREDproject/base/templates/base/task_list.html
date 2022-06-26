@@ -1,4 +1,14 @@
-<h1> MY DO TO list</h1>
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p>
+<a href="{% url 'logout' %}">LogOut</a>
+{% else %}
+<a href="{% url 'login' %}">LogIn</a>
+{% endif %}
+
+
+<hr>
+
+<h1> MY DO TO list {{color}}</h1>
 <a href="{% url 'task-create' %}">Add item</a>
 
 <table>
